@@ -44,9 +44,23 @@
         <li><code>git push -u origin main</code> – ส่งโค้ดจากเครื่องขึ้นไปยัง GitHub</li>
       </ul>
 
-      <p style="margin-top:10px;">
+      <!-- ตัวอย่างหน้าจอ GitHub Repo -->
+      <h2 style="margin-top:18px;">ตัวอย่างหน้า GitHub Repository ของโปรเจกต์</h2>
+      <figure class="screenshot">
+        <img src="{{ url_for('static', filename='images/github_repo.png') }}"
+             alt="หน้า GitHub repository ce341-flask-docker ของ 67112247-source"
+             width="800">
+        <figcaption>
+          หน้าตัวอย่าง Repository <code>ce341-flask-docker</code> บน GitHub 
+          แสดงไฟล์ <code>src/</code>, <code>Dockerfile</code>, <code>requirements.txt</code>
+          หลังจากสั่ง <code>git push -u origin main</code> สำเร็จ
+        </figcaption>
+      </figure>
+
+      <p style="margin-top:16px;">
         ในงานนี้ เราใช้ Git และ GitHub เพื่อเก็บโค้ด Flask และ Dockerfile 
-        ทำให้ง่ายต่อการส่งงานและตรวจสอบประวัติการพัฒนาโปรเจกต์
+        ทำให้ง่ายต่อการส่งงาน ตรวจสอบประวัติการพัฒนา และสามารถ clone
+        โปรเจกต์ไปรันบนเครื่องอื่นได้สะดวก
       </p>
     </div>
 

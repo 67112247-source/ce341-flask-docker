@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <title>Git & GitHub</title>
+  <!-- โหลดไฟล์สไตล์หลัก -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- ชื่อเว็บ/โปรเจกต์ด้านบน -->
+    <div class="site-title">CE341 – Web by Python Flask with Docker</div>
+    <div class="site-subtitle">สรุปความรู้เรื่องการใช้งาน Git และ GitHub</div>
+
+    <!-- แถบเมนูด้านบน -->
+    <nav class="navbar">
+      <a href="{{ url_for('home') }}">หน้า Home</a>
+      <a href="{{ url_for('git_page') }}">สรุป Git & GitHub</a>
+      <a href="{{ url_for('docker_page') }}">สรุป Docker</a>
+    </nav>
+
+    <!-- หัวข้อหลักของหน้า -->
+    <h1 class="page-heading">สรุป Git & GitHub</h1>
+
+    <div class="section">
+      <p>
+        <strong>Git</strong> คือระบบจัดการเวอร์ชันของไฟล์ (Version Control) 
+        ใช้เก็บประวัติการแก้ไขโค้ด สามารถย้อนกลับไปดูเวอร์ชันก่อนหน้าได้
+        และช่วยให้การทำงานร่วมกันเป็นทีมเป็นระเบียบมากขึ้น
+      </p>
+
+      <p style="margin-top:8px;">
+        <strong>GitHub</strong> เป็นบริการบน cloud สำหรับเก็บ repository ของ Git 
+        ทำให้เราสามารถแชร์โค้ด ดูประวัติการแก้ไข และทำงานร่วมกันผ่านอินเทอร์เน็ตได้สะดวก
+      </p>
+
+      <p style="margin-top:12px;"><strong>ตัวอย่างคำสั่ง Git ที่ใช้บ่อย</strong></p>
+      <ul>
+        <li><code>git init</code> – เริ่มต้นสร้าง repository ใหม่ในโฟลเดอร์ปัจจุบัน</li>
+        <li><code>git status</code> – ตรวจสอบสถานะไฟล์ที่ถูกแก้ไข</li>
+        <li><code>git add .</code> – เพิ่มไฟล์ทั้งหมดเตรียมสำหรับ commit</li>
+        <li><code>git commit -m "ข้อความ"</code> – บันทึกการเปลี่ยนแปลงลงในประวัติ</li>
+        <li><code>git remote add origin &lt;url&gt;</code> – เชื่อม repo ในเครื่องกับ GitHub</li>
+        <li><code>git push -u origin main</code> – ส่งโค้ดจากเครื่องขึ้นไปยัง GitHub</li>
+      </ul>
+
+      <p style="margin-top:10px;">
+        ในงานนี้ เราใช้ Git และ GitHub เพื่อเก็บโค้ด Flask และ Dockerfile 
+        ทำให้ง่ายต่อการส่งงานและตรวจสอบประวัติการพัฒนาโปรเจกต์
+      </p>
+    </div>
+
+    <div class="footer">
+      หน้านี้: สรุปการใช้งาน Git & GitHub
+    </div>
+  </div>
+</body>
+</html>

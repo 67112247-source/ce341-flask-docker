@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <title>Docker</title>
+  <!-- โหลดไฟล์สไตล์หลัก -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- ชื่อเว็บ/โปรเจกต์ด้านบน -->
+    <div class="site-title">CE341 – Web by Python Flask with Docker</div>
+    <div class="site-subtitle">สรุปความรู้เกี่ยวกับ Docker และการสร้าง Image</div>
+
+    <!-- แถบเมนูด้านบน -->
+    <nav class="navbar">
+      <a href="{{ url_for('home') }}">หน้า Home</a>
+      <a href="{{ url_for('git_page') }}">สรุป Git & GitHub</a>
+      <a href="{{ url_for('docker_page') }}">สรุป Docker</a>
+    </nav>
+
+    <!-- หัวข้อหลักของหน้า -->
+    <h1 class="page-heading">สรุป Docker</h1>
+
+    <div class="section">
+      <p>
+        <strong>Docker</strong> คือเครื่องมือสำหรับสร้างและจัดการ
+        <em>container</em> ซึ่งเป็นสภาพแวดล้อมเล็ก ๆ ที่รวมทั้งโค้ดและ dependency
+        เอาไว้ด้วยกัน ทำให้สามารถย้ายแอปพลิเคชันไปรันบนเครื่องอื่นได้ง่ายขึ้น
+        โดยไม่ต้องกังวลเรื่องการติดตั้งแพ็กเกจซ้ำหลายรอบ
+      </p>
+
+      <p style="margin-top:10px;"><strong>แนวคิดสำคัญของ Docker</strong></p>
+      <ul>
+        <li><strong>Image</strong> – แม่แบบ (template) ที่เก็บโค้ดและสภาพแวดล้อมเอาไว้</li>
+        <li><strong>Container</strong> – instance ของ image ที่กำลังรันอยู่จริง</li>
+        <li><strong>Dockerfile</strong> – ไฟล์ที่ใช้บอกขั้นตอนการสร้าง image</li>
+      </ul>
+
+      <!-- รูปประกอบ Docker -->
+      <div class="illustration">
+        <img src="{{ url_for('static', filename='images/docker.png') }}"
+             alt="ตัวอย่างการสร้างและรัน Docker image">
+        <div class="caption">
+          ตัวอย่างการสร้าง image และรัน container ด้วยคำสั่ง
+          <code>docker build</code>, <code>docker run</code>
+          และตรวจสอบสถานะด้วย <code>docker ps</code> บน Docker Desktop
+        </div>
+      </div>
+
+      <p style="margin-top:10px;"><strong>ตัวอย่างคำสั่ง Docker ที่ใช้ในงานนี้</strong></p>
+      <ul>
+        <li><code>docker build -t virada/ce314-flask-web:v1 .</code> – สร้าง image จาก Dockerfile</li>
+        <li><code>docker run -p 5000:5000 virada/ce314-flask-web:v1</code> – รัน container และเปิดใช้งานผ่าน port 5000</li>
+        <li><code>docker images</code> – แสดงรายการ image ที่มีอยู่ในเครื่อง</li>
+        <li><code>docker ps</code> – แสดง container ที่กำลังรันอยู่</li>
+        <li><code>docker push virada/ce314-flask-web:v1</code> – ส่ง image ขึ้น Docker Hub</li>
+      </ul>
+
+      <p style="margin-top:10px;">
+        ในโปรเจกต์นี้ เราใช้ Docker เพื่อสร้าง image ของเว็บที่เขียนด้วย Flask
+        จากนั้นสามารถนำ image นี้ไปรันบนเครื่องอื่น หรือบนเซิร์ฟเวอร์ได้สะดวก
+        โดยไม่ต้องตั้งค่า Python และ dependency ใหม่ทุกครั้ง
+      </p>
+    </div>
+
+    <div class="footer">
+      หน้านี้: สรุปแนวคิดและคำสั่ง Docker
+    </div>
+  </div>
+</body>
+</html>

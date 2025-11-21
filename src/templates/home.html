@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <title>Home - Flask Docker</title>
+  <!-- โหลดไฟล์สไตล์หลัก -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- ชื่อเว็บ/โปรเจกต์ด้านบน -->
+    <div class="site-title">CE341 – Web by Python Flask with Docker</div>
+    <div class="site-subtitle">เว็บง่าย ๆ ด้วย Flask + Docker</div>
+
+    <!-- แถบเมนูด้านบน -->
+    <nav class="navbar">
+      <a href="{{ url_for('home') }}">หน้า Home</a>
+      <a href="{{ url_for('git_page') }}">สรุป Git & GitHub</a>
+      <a href="{{ url_for('docker_page') }}">สรุป Docker</a>
+    </nav>
+
+    <!-- หัวข้อหลักของหน้า -->
+    <h1 class="page-heading">หน้า Home</h1>
+
+    <!-- layout รูป + ข้อมูล -->
+    <div class="home-layout">
+      <div class="home-photo">
+        <img src="{{ url_for('static', filename='images/me.jpg') }}"
+             alt="รูปนักศึกษา">
+      </div>
+
+      <div class="home-info">
+        <p><strong>ชื่อ:</strong> {{ student_name }}</p>
+        <p><strong>รหัสนักศึกษา:</strong> {{ student_id }}</p>
+
+        <p style="margin-top:12px;">
+          ยินดีต้อนรับสู่เว็บที่สร้างด้วย Python Flask และ Docker
+          หน้าเว็บนี้ใช้สำหรับแสดงข้อมูลนักศึกษา
+          และมีเมนูด้านบนสามารถกดลิงก์ไปยังหน้าสรุปความรู้เรื่องการใช้งาน Git/GitHub และ Docker
+        </p>
+      </div>
+    </div>
+
+    <!-- footer เล็ก ๆ ด้านล่าง -->
+    <div class="footer">
+      จัดทำโดย {{ student_name }}
+    </div>
+  </div>
+</body>
+</html>

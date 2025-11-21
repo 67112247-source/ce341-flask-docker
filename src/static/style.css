@@ -1,0 +1,156 @@
+/* ฟอนต์ + พื้นหลังรวม */
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Kanit", system-ui, sans-serif;
+  background: #f3f4f6;           /* เทาอ่อน */
+  color: #111827;                 /* ตัวอักษรเข้ม */
+}
+
+/* กล่องหลักกลางหน้า */
+.page-wrapper {
+  max-width: 900px;
+  margin: 40px auto;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+  padding: 32px 40px 40px;
+}
+
+/* หัวเว็บด้านบน */
+.site-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #2563eb;                 /* น้ำเงินอ่อน */
+  margin-bottom: 8px;
+}
+
+.site-subtitle {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+/* เมนูด้านบน */
+.navbar {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.navbar a {
+  font-size: 14px;
+  text-decoration: none;
+  color: #374151;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition: all 0.2s ease;
+  background: #e5f0ff;
+}
+
+.navbar a:hover {
+  border-color: #2563eb;
+  background: #2563eb;
+  color: #ffffff;
+}
+
+/* หัวข้อใหญ่ของแต่ละหน้า */
+.page-heading {
+  font-size: 22px;
+  margin-bottom: 16px;
+}
+
+/* layout ของหน้า Home: รูป + ข้อมูล */
+.home-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.home-photo {
+  flex: 0 0 220px;
+}
+
+.home-photo img {
+  width: 100%;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.home-info {
+  flex: 1 1 240px;
+  font-size: 16px;
+}
+
+.home-info p {
+  margin-bottom: 8px;
+}
+
+/* ส่วนเนื้อหาในหน้า Git / Docker */
+.section {
+  margin-top: 8px;
+  line-height: 1.6;
+  font-size: 15px;
+}
+
+.section ul {
+  margin-left: 20px;
+  margin-top: 6px;
+}
+
+.section li {
+  margin-bottom: 4px;
+}
+
+/* footer เล็ก ๆ ด้านล่าง */
+.footer {
+  margin-top: 24px;
+  font-size: 12px;
+  color: #9ca3af;
+  text-align: right;
+}
+
+/* ทำให้ดูดีในมือถือ */
+@media (max-width: 640px) {
+  .page-wrapper {
+    margin: 16px;
+    padding: 20px 18px 24px;
+  }
+
+  .home-layout {
+    flex-direction: column;
+  }
+
+  .navbar {
+    flex-wrap: wrap;
+  }
+}
+
+/* บล็อกรูปประกอบ + คำอธิบาย ใช้ในหน้า Git / Docker */
+.illustration {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.illustration img {
+  max-width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.18);
+}
+
+.caption {
+  margin-top: 8px;
+  font-size: 13px;
+  color: #6b7280;
+}
+
